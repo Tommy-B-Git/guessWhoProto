@@ -93,30 +93,29 @@ $(document).ready(function() {
     }
 
 
-
     // I N S T R U C T I O N S  S L I D E Rs
     $('#my-slider').unslider();
 
 
     //Get SELECT values
     function grabInputVal() {
+        // click event on select submit
         $(".pickAFeatureBtn").on('click', function(e) {
             e.preventDefault();
-            //console.log($(".featureList").val());
+            // Assign select value to var
             var computerHas = ($(".featureList").val());
             theComputer;
-            //console.log(theComputer);
-            //check theComputer array for computerHas property
+            //check theComputer array for computerHas(select) property
             for (var i = 0; i < theComputer.length; i++) {
-                //console.log(theComputer[i]);
                 // line below check for property val from dropdown against theComputer 
                 if (theComputer[i].hasOwnProperty(computerHas) && theComputer[i][computerHas] === true) {
                     var compTempObj = {};
                     // compTempObj.prop = computerHas;
                     compTempObj[computerHas] = theComputer[i][computerHas];
-                    compTempArr.push(compTempObj);
+                    compTempObj = compTempArr.push(compTempObj);
                     console.log(compTempArr);
                 } else {
+                    // Run function to make computer guess 
                     console.log('Noooooooooo!');
                 }
             }
