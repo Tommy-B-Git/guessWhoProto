@@ -1,14 +1,15 @@
+var allTheCharacters = [];
+var theHuman = [];
+var theComputer = [];
+var humanTempArr = [];
+var compTempArr = [];
+
 $(document).ready(function() {
 
     $.ajaxSetup({
         cache: false,
     });
 
-    var allTheCharacters = [];
-    var theHuman = [];
-    var theComputer = [];
-    var humanTempArr = [];
-    var compTempArr = [];
 
     // Get JSON and callback so JSON can be stored globally
     $.getJSON('people.json', callback);
@@ -45,7 +46,7 @@ $(document).ready(function() {
 
     // Pick random  H U M A N  player
     function pickAPlayer() {
-        theHuman = [];
+        //theHuman = [];
         random = Math.floor(Math.random() * allTheCharacters.length);
         // console.log(allTheCharacters[random]);
         player1 = allTheCharacters[random];
@@ -65,7 +66,7 @@ $(document).ready(function() {
 
     // Pick random  C O M P U T E R  player
     function pickComputerPlayer() {
-        theComputer = [];
+        //theComputer = [];
         random = Math.floor(Math.random() * allTheCharacters.length);
         // console.log(allTheCharacters[random]);
         comp1 = allTheCharacters[random];
@@ -101,7 +102,25 @@ $(document).ready(function() {
     function grabInputVal() {
         $(".pickAFeatureBtn").on('click', function(e) {
             e.preventDefault();
-            console.log($(".featureList").val());
+            //console.log($(".featureList").val());
+            var computerHas = ($(".featureList").val());
+            theComputer;
+            //console.log(theComputer);
+            //check theComputer array for computerHas property
+            for (var i = 0; i < theComputer.length; i++) {
+                //console.log(theComputer[i]);
+                // line below check for property val from dropdown against theComputer 
+                if (theComputer[i].hasOwnProperty(computerHas) && theComputer[i][computerHas] === true) {
+                    var compTempObj = {};
+                    // compTempObj.prop = computerHas;
+                    compTempObj[computerHas] = theComputer[i][computerHas];
+                    compTempArr.push(compTempObj);
+                    console.log(compTempArr);
+                } else {
+                    console.log('Noooooooooo!');
+                }
+            }
+
         });
     }
 
