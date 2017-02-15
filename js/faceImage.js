@@ -4,6 +4,9 @@ var theComputer = [];
 var humanTempArr = [];
 var compTempArr = [];
 var computerTempObj = compTempArr[0] || {};
+var turn = true;
+var mesaageToPlayer;
+var messageToCPU;
 
 $(document).ready(function() {
 
@@ -99,31 +102,36 @@ $(document).ready(function() {
 
 
     //Get SELECT values
-    function grabInputVal() {
+    function grabInputValue() {
         // click event on select submit
         $(".pickAFeatureBtn").on('click', function(e) {
             e.preventDefault();
-            // Assign <select> value to var
-            var computerHas = ($(".featureList").val());
-            theComputer;
-            //check theComputer array for computerHas(select) property
-            for (var i = 0; i < theComputer.length; i++) {
-                // line below check for property val from dropdown against theComputer 
-                if (theComputer[i].hasOwnProperty(computerHas) && theComputer[i][computerHas] === true) {
-                    computerTempObj[computerHas] = theComputer[i][computerHas];
-                    if(compTempArr.length ===0)
-                        compTempArr.push(computerTempObj);
-                    console.log(compTempArr);
-                } else {
-                    // Run function to make computer guess 
-                    console.log('Noooooooooo!');
-                }
-            }
-
+            player1Turn();
         });
     }
+    grabInputValue();
 
-    grabInputVal()
+    function player1Turn() {
+        // Assign <select> value to var
+        var computerHas = ($(".featureList").val());
+        theComputer;
+        //check theComputer array for computerHas(select) property
+        for (var i = 0; i < theComputer.length; i++) {
+            // line below check for property val from dropdown against theComputer 
+            if (theComputer[i].hasOwnProperty(computerHas) && theComputer[i][computerHas] === true) {
+                computerTempObj[computerHas] = theComputer[i][computerHas];
+                if (compTempArr.length === 0)
+                    compTempArr.push(computerTempObj);
+                console.log(compTempArr);
+                // removeCorrectFaces();
+            } else {
+                // Run function to make computer guess 
+                console.log('Noooooooooo!');
+            }
+        }
+    };
+
+
 
 
 }); //end of document.ready
