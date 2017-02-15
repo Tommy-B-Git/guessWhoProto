@@ -34,8 +34,8 @@
     "image": "img/face2.jpg"
 }, {
     "id": 3,
-    "male": false,
-    "female": true,
+    "male": true,
+    "female": false,
     "name": "Benjamin",
     "black hair": false,
     "white hair": true,
