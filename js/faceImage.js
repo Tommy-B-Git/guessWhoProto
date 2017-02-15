@@ -3,16 +3,38 @@ var theHuman = [];
 var theComputer = [];
 var humanTempArr = [];
 var compTempArr = [];
-var computerTempObj = compTempArr[0] || {};
+var guessedCorrectCompProperty = compTempArr[0] || {};
 var turn = true;
-var mesaageToPlayer;
+var messageToPlayer;
 var messageToCPU;
+var computerHasProperty;
+var winner = false;
 
 $(document).ready(function() {
 
     $.ajaxSetup({
         cache: false,
     });
+
+    // function Person(id, male, female, blackHair, whiteHair, blondeHair,
+    //     redHair, purpleHair, blueHair, beard, moustache, glasses, earrings, hat, image) {
+    //     this.id = id;
+    //     this.male = male;
+    //     this.female = female;
+    //     this.blackHair = blackHair;
+    //     this.whiteHair = whiteHair;
+    //     this.blondeHair = blondeHair;
+    //     this.redHair = redHair;
+    //     this.purpleHair = purpleHair;
+    //     this.blueHair = blueHair;
+    //     this.beard = beard;
+    //     this.moustache = moustache;
+    //     this.glasses = glasses;
+    //     this.earrings = earrings;
+    //     this.hat = hat;
+    //     this.image = image;
+    // }
+
 
 
     // Get JSON and callback so JSON can be stored globally
@@ -35,7 +57,7 @@ $(document).ready(function() {
 
     };
 
-    console.log(allTheCharacters);
+    //console.log(allTheCharacters);
 
     // Start button click event
     $('.start-button').on('click', function() {
@@ -113,23 +135,50 @@ $(document).ready(function() {
 
     function player1Turn() {
         // Assign <select> value to var
-        var computerHas = ($(".featureList").val());
+        var computerHasProperty = ($('.featureList').val());
         theComputer;
-        //check theComputer array for computerHas(select) property
+        //console.log(theComputer[0].id);
+        //check theComputer array for computerHasProperty(select) property
         for (var i = 0; i < theComputer.length; i++) {
             // line below check for property val from dropdown against theComputer 
-            if (theComputer[i].hasOwnProperty(computerHas) && theComputer[i][computerHas] === true) {
-                computerTempObj[computerHas] = theComputer[i][computerHas];
+            if (theComputer[i].hasOwnProperty(computerHasProperty) && theComputer[i][computerHasProperty] === true) {
+                guessedCorrectCompProperty[computerHasProperty] = theComputer[i][computerHasProperty];
                 if (compTempArr.length === 0)
-                    compTempArr.push(computerTempObj);
+                    // compTempArr.push(theComputer['id']);
+                    compTempArr.push(guessedCorrectCompProperty);
                 console.log(compTempArr);
-                // removeCorrectFaces();
+                // Run function to make change images to X versions 
+                correctPropertyChoice();
+                removeRedundantCharacter();
             } else {
                 // Run function to make computer guess 
                 console.log('Noooooooooo!');
+                wrongPropertyChoice();
+
             }
         }
     };
+
+    function correctPropertyChoice() {
+        var computerHasProperty = ($('.featureList').val());
+        //if the object does contain property
+        alert("Good guess - click on characters that arent/dont have " + computerHasProperty + " to remove from game!")
+    };
+
+    function wrongPropertyChoice() {
+        var computerHasProperty = ($('.featureList').val());
+        //if the object does contain property
+        alert("Unlucky! "  + computerHasProperty + " is not a property")
+    };
+    
+    function removeRedundantCharacter(){
+        $redundantFace = $('.faces');
+        $redundantFace.on('click', function(e) {
+            e.preventDefault();
+            /* Act on the event */
+            $(this).attr('src', 'img/wrong/face1-wrong.jpg');
+        });
+    }
 
 
 
