@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Guess Who</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/easy-autocomplete.min.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <!-- <link rel="stylesheet" href="css/unslider.css"> -->
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" href="fonts/Guess-Who.css">
+</head>
+
+<body>
+    <div>
+        <aside>
+            <img src="img/guess-who-logo.png" class="mainLogo">
+            <table class="flexTable">
+                <tr>
+                    <td class="scoreboard">&nbsp;</td>
+                    <td class="scoreboard">&nbsp;</td>
+                    <td class="scoreboard">&nbsp;</td>
+                    <td class="scoreboard">&nbsp;</td>
+                    <td class="scoreboard">&nbsp;</td>
+                    <td class="scoreboard">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="scoreboard">&nbsp;</td>
+                    <td class="scoreboard">&nbsp;</td>
+                    <td class="scoreboard">&nbsp;</td>
+                    <td class="scoreboard">&nbsp;</td>
+                    <td class="scoreboard">&nbsp;</td>
+                    <td class="scoreboard">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="scoreboard">&nbsp;</td>
+                    <td class="scoreboard">&nbsp;</td>
+                    <td class="scoreboard">&nbsp;</td>
+                    <td class="scoreboard">&nbsp;</td>
+                    <td class="scoreboard">&nbsp;</td>
+                    <td class="scoreboard">&nbsp;</td>
+                </tr>
+            </table>
+            <div class="whoContainer">
+                <div>
+                    <p class="whoContainerText">Player 1</p>
+                    <img src="img/who-avatar.jpg" class="who-player">
+                </div>
+                <div>
+                    <p class="whoContainerText">Computer</p>
+                    <img src="img/who-avatar.jpg" class="who-computer">
+                </div>
+            </div>
+            <div class="button-container">
+                <button class="start-button">Start</button>
+                <button class="reset-button">Reset</button>
+            </div>
+            <div class="question-container">
+                <p class="whiteHeavy">Search character attributes</p>
+                <form class="askForm">
+                    <!-- <input type="submit" name="submit" value="Ask Question" class="pickAFeatureBtn"> -->
+                    <button type="submit" class="pickAFeatureBtn">Check for Attribute</button>
+                    <select class="featureList">
+                        <option class="charFeature" value="choose">Pick a feature...</option>
+                        <option class="charFeature" value="male">male</option>
+                        <option class="charFeature" value="female">female</option>
+                        <option class="charFeature" value="black hair">black hair</option>
+                        <option class="charFeature" value="white hair">white hair</option>
+                        <option class="charFeature" value="blonde hair">blonde hair</option>
+                        <option class="charFeature" value="red hair">red hair</option>
+                        <option class="charFeature" value="blue hair">blue hair</option>
+                        <option class="charFeature" value="purple hair">purple hair</option>
+                        <option class="charFeature" value="bald">bald</option>
+                        <option class="charFeature" value="beard">beard</option>
+                        <option class="charFeature" value="moustache">moustache</option>
+                        <option class="charFeature" value="glasses">glasses</option>
+                        <option class="charFeature" value="earrings">earrings</option>
+                        <option class="charFeature" value="hat">hat</option>
+                        <option class="charFeature" value="green eyes">green eyes</option>
+                        <option class="charFeature" value="black eyes">black eyes</option>
+                        <option class="charFeature" value="brown skin">brown skin</option>
+                        <option class="charFeature" value="pale skin">pale skin</option>
+                    </select>
+                </form>
+            </div>
+        </aside>
+        <!-- Start of main section -->
+        <main>
+            <div class="faces-container">
+                <img class="faces">
+                <p class="char-names"></p>
+            </div>
+            <div class="faces-container">
+                <img class="faces">
+                <p class="char-names"></p>
+            </div>
+            <div class="faces-container">
+                <img class="faces">
+                <p class="char-names"></p>
+            </div>
+            <div class="faces-container">
+                <img class="faces">
+                <p class="char-names"></p>
+            </div>
+            <div class="faces-container">
+                <img class="faces">
+                <p class="char-names"></p>
+            </div>
+            <div class="faces-container">
+                <img class="faces">
+                <p class="char-names"></p>
+            </div>
+            <div class="faces-container">
+                <img class="faces">
+                <p class="char-names"></p>
+            </div>
+            <div class="faces-container">
+                <img class="faces">
+                <p class="char-names"></p>
+            </div>
+            <div class="faces-container">
+                <img class="faces">
+                <p class="char-names"></p>
+            </div>
+            <div class="faces-container">
+                <img class="faces">
+                <p class="char-names"></p>
+            </div>
+            <div class="faces-container">
+                <img class="faces">
+                <p class="char-names"></p>
+            </div>
+            <div class="faces-container">
+                <img class="faces">
+                <p class="char-names"></p>
+            </div>
+            <div class="faces-container">
+                <img class="faces">
+                <p class="char-names"></p>
+            </div>
+            <div class="faces-container">
+                <img class="faces">
+                <p class="char-names"></p>
+            </div>
+            <div class="faces-container">
+                <img class="faces">
+                <p class="char-names"></p>
+            </div>
+            <div class="faces-container">
+                <img class="faces">
+                <p class="char-names"></p>
+            </div>
+            <div class="faces-container">
+                <img class="faces">
+                <p class="char-names"></p>
+            </div>
+            <div class="faces-container">
+                <img class="faces">
+                <p class="char-names"></p>
+            </div>
+        </main>
+        <footer>
+            <div id="instructions">
+                <ul class="dialogBox">
+                    <li class="instructDialog dialogBoxShow">
+                        <h3>Instructions</h3>
+                        <p>Click the start button to select your character. Try to guess the Computers character by selecting an attribute from the dropdown menu and click the 'Check' button to confirm. The computer will then take a guess at your character attributes.</p>
+                    </li>
+                    <li style="display:none;" class="computerDialog">
+                        <h3>Now it is the Computer's turn to guess</h3>
+                        <p></p>
+                        <div class="yesNoButtonsContainer">
+                            <button class="yesButton">Yes</button>
+                            <button class="noButton">No</button>
+                        </div>
+                    </li>
+                    <li style="display:none;" class="humanDialog">
+                        <h3>Its your turn to play again!</h3>
+                        <p>Pick another attribute from the dropdown menu and click the 'Check for Attribute' button to confirm your choice.</p>
+                    </li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+    <script src="js/jquery-3.1.1.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/main.js"></script>
+    <!-- <script src="js/faceImage.js"></script> -->
+    <!-- <script src="js/version2.js"></script> -->
+    <script src="js/questions.js"></script>
+    <script src="js/underscore.js"></script>
+</body>
+
+</html>
