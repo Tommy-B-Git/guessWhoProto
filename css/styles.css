@@ -5,7 +5,7 @@
 
 body {
     margin: 0;
-    height: 100%;
+    height: 100vh;
     width: 100%;
     background: red;
     overflow: hidden;
@@ -16,6 +16,11 @@ body > div {
     display: flex;
     flex-flow: row wrap;
     min-width: 60vw;
+    min-height: 100vh;
+}
+
+ul, li{
+    list-style: none;
 }
 
 .hidden {
@@ -44,7 +49,7 @@ body > div {
 /* =========== A S I D E__S E C T I O N ============= */
 
 body > div > aside {
-    background: #59114d;
+    background: #540D6E;
     order: 1;
     flex: 0 1 22%;
     min-width: 11%;
@@ -58,7 +63,7 @@ body > div > main {
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    background: #003b36;
+    background: #EE4266;
     order: 2;
     flex: 1 2 70%;
     min-width: 35%;
@@ -67,15 +72,14 @@ body > div > main {
 }
 
 body > div > footer {
-    background: #f7ef81;
+    background: #9CF6F6;
     order: 2;
     flex: 0 1 100%;
-    height: 20%;
-    padding: 0% 10% 6% 10%;
-    /* overflow: hidden; */
+    min-height: 100%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-content: center;
+    flex-basis: 100%;
 }
 
 .instructText {
@@ -109,6 +113,11 @@ td {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.whoContainerText{
+    color: #fff;
+    text-align: center;
 }
 
 .who {
@@ -149,12 +158,55 @@ img.who-computer {
     background-color: green;
     color: white;
     padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
 }
 
 .reset-button {
     background-color: red;
     color: white;
     padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+}
+
+.pickAFeatureBtn {
+    background-color: white;
+    color: #000;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+}
+
+.okButton{
+    background-color: #000;
+    color: #fff;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+}
+
+.noButton{
+    background-color: red;
+    color: white;
+    padding: 6px 18px;
+    border: none;
+    border-radius: 4px;
+    margin: 4px;
+}
+
+.yesButton{
+    background-color: green;
+    color: white;
+    padding: 6px 18px;
+    border: none;
+    border-radius: 4px;
+    margin: 4px;
+}
+
+.yesNoButtonsContainer{
+    display: flex;
+    flex-direction: row;
 }
 
 
@@ -172,9 +224,10 @@ img.who-computer {
 
 .faces {
     background: white;
-    border: 1px solid black;
-    max-width: 80%;
+    border: 4px solid #fff;
+    max-width: 86%;
     margin: 2px auto;
+    box-sizing: content-box;
 }
 
 .char-names {
@@ -199,14 +252,36 @@ img.who-computer {
 
 #instructions {
     display: flex;
-    flex-direction: row;
-    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 80%;
     margin: 0 auto;
-    height: 20%;
+    padding: 2% 0 2% 0;
 }
 
-.instructOverflow {
+.dialogBox > li {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.dialogBoxShow{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.dialogBoxHide{
+    display: none;
+}
+
+/* .instructOverflow {
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -216,4 +291,4 @@ img.who-computer {
 
 #my-slider {
     padding: 10px 0px;
-}
+} */
